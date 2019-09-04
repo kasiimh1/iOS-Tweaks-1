@@ -23,7 +23,7 @@
     return 1;
 }
 - (void)setExpirationDate:(double)arg1 {
-	NSString *dateStr = @"10-10-2099";
+    NSString *dateStr = @"10-10-2099";
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"dd-MM-yyyy"];
     NSDate *date = [dateFormat dateFromString:dateStr];
@@ -281,6 +281,16 @@
 - (void)setBlockSignOut:(bool)arg1 {
     arg1 = 1;
     %orig;
+}
+- (id)controlsView {
+    id orig = %orig;
+    [orig setHidden:TRUE];
+    return orig;
+}
+- (id)setControlsView:(id)arg1 {
+    id orig = %orig;
+    [orig setHidden:TRUE];
+    return orig;
 }
 %end
 
