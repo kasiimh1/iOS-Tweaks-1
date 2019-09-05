@@ -282,15 +282,16 @@
     arg1 = 1;
     %orig;
 }
-- (id)controlsView {
-    id orig = %orig;
+- (UIView *)controlsView {
+    UIView * orig = %orig;
     [orig setHidden:TRUE];
     return orig;
 }
-- (id)setControlsView:(id)arg1 {
-    id orig = %orig;
+- (void)setControlsView:(id)arg1 {
+    id orig = arg1;
     [orig setHidden:TRUE];
-    return orig;
+    arg1 = orig;
+    %orig;
 }
 %end
 
